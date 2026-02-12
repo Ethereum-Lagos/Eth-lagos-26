@@ -33,7 +33,7 @@ export function TopNav({ connectedWallet, onWalletClick, onWalletDisconnect }: T
           alt="EthLagos Logo"
           className="logo object-cover"
         />
-        <span className="text-white text-lg">EthLagos</span>
+        <span className="text-white text-lg">ETHLagos</span>
       </div>
 
       <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
