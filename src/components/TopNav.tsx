@@ -31,7 +31,7 @@ export function TopNav({ connectedWallet, onWalletClick, onWalletDisconnect }: T
         <img
           src={new URL('../assets/logo.png', import.meta.url).href}
           alt="EthLagos Logo"
-          className="!w-[50px] object-contain"
+          className="logo object-cover"
         />
         <span className="text-white text-lg">EthLagos</span>
       </div>

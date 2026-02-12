@@ -1712,3 +1712,7 @@ html {
     opacity: .5;
   }
 }
+
+.logo{
+  width: 50px !important;
+}
