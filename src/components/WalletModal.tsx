@@ -16,25 +16,21 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
       name: 'MetaMask',
       icon: '🦊',
       description: 'Connect using MetaMask wallet',
-      color: 'from-orange-600/20 to-orange-400/20 border-orange-500/30 hover:border-orange-500/50',
     },
     {
       name: 'WalletConnect',
       icon: '📱',
       description: 'Scan with WalletConnect',
-      color: 'from-blue-600/20 to-blue-400/20 border-blue-500/30 hover:border-blue-500/50',
     },
     {
       name: 'Coinbase Wallet',
       icon: '🔵',
       description: 'Connect with Coinbase Wallet',
-      color: 'from-blue-600/20 to-cyan-400/20 border-cyan-500/30 hover:border-cyan-500/50',
     },
     {
       name: 'Rainbow',
       icon: '🌈',
       description: 'Connect using Rainbow wallet',
-      color: 'from-purple-600/20 to-pink-400/20 border-purple-500/30 hover:border-purple-500/50',
     },
   ];
 
@@ -61,7 +57,7 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50"
           />
 
           {/* Modal */}
@@ -70,17 +66,17 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-gray-900 border border-purple-500/30 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl"
+              className="bg-[#1a1a1a] border border-[#c4ff0e]/30 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl"
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-purple-500/20">
+              <div className="flex items-center justify-between p-6 border-b border-[#c4ff0e]/20">
                 <div className="flex items-center gap-3">
-                  <Wallet className="w-6 h-6 text-purple-400" />
+                  <Wallet className="w-6 h-6 text-[#c4ff0e]" />
                   <h2 className="text-2xl text-white">Connect Wallet</h2>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-purple-600/20 rounded-lg transition-colors"
+                  className="p-2 hover:bg-[#c4ff0e]/10 rounded-lg transition-colors"
                 >
                   <X className="w-5 h-5 text-gray-400" />
                 </button>
@@ -98,7 +94,7 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
                       key={wallet.name}
                       onClick={() => handleConnect(wallet.name)}
                       disabled={connecting !== null}
-                      className={`w-full bg-gradient-to-br ${wallet.color} border rounded-xl p-4 transition-all hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed`}
+                      className="w-full bg-[#2a2a2a] hover:bg-[#333] border border-[#c4ff0e]/20 hover:border-[#c4ff0e]/50 rounded-xl p-4 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <div className="flex items-center gap-4">
                         <span className="text-4xl">{wallet.icon}</span>
@@ -107,7 +103,7 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
                           <div className="text-sm text-gray-400">{wallet.description}</div>
                         </div>
                         {connecting === wallet.name && (
-                          <div className="w-5 h-5 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
+                          <div className="w-5 h-5 border-2 border-[#c4ff0e] border-t-transparent rounded-full animate-spin" />
                         )}
                       </div>
                     </button>

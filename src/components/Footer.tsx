@@ -1,78 +1,66 @@
-import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
-import { EthereumLogo } from './EthereumLogo';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="bg-gray-900/80 border-t border-purple-500/20 py-12 px-6">
+    <footer id="contact" className="bg-[#2d3a28] py-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <EthereumLogo className="w-8 h-8" />
-              <span className="text-xl text-white">
-                <span className="text-purple-400">Eth</span>Lagos
-              </span>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Africa's premier Ethereum conference bringing together the brightest minds in blockchain.
-            </p>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#c4ff0e] transition-colors"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#c4ff0e] transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#c4ff0e] transition-colors"
+            >
+              <Twitter className="w-5 h-5" />
+            </a>
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#c4ff0e] transition-colors"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><a href="#about" className="hover:text-purple-400 transition-colors">About</a></li>
-              <li><a href="#agenda" className="hover:text-purple-400 transition-colors">Agenda</a></li>
-              <li><a href="#speakers" className="hover:text-purple-400 transition-colors">Speakers</a></li>
-              <li><a href="#hackathon" className="hover:text-purple-400 transition-colors">Hackathon</a></li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-white mb-4">Resources</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-purple-400 transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Venue</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Sponsors</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-white mb-4">Connect</h4>
-            <div className="flex gap-3 mb-4">
-              <a href="#" className="p-2 bg-purple-600/20 hover:bg-purple-600/40 rounded-lg transition-colors">
-                <Twitter className="w-4 h-4 text-purple-400" />
-              </a>
-              <a href="#" className="p-2 bg-purple-600/20 hover:bg-purple-600/40 rounded-lg transition-colors">
-                <Linkedin className="w-4 h-4 text-purple-400" />
-              </a>
-              <a href="#" className="p-2 bg-purple-600/20 hover:bg-purple-600/40 rounded-lg transition-colors">
-                <Github className="w-4 h-4 text-purple-400" />
-              </a>
-              <a href="#" className="p-2 bg-purple-600/20 hover:bg-purple-600/40 rounded-colors">
-                <Mail className="w-4 h-4 text-purple-400" />
-              </a>
-            </div>
-            <p className="text-gray-400 text-sm">
-              info@ethlagos.org
-            </p>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-purple-500/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
-            © 2026 EthLagos. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-gray-400 text-sm">
-            <a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Code of Conduct</a>
+          {/* Footer Links */}
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white">
+            <button onClick={() => scrollToSection('home')} className="hover:text-[#c4ff0e] transition-colors">
+              Terms of Service
+            </button>
+            <button onClick={() => scrollToSection('home')} className="hover:text-[#c4ff0e] transition-colors">
+              Privacy Policy
+            </button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-[#c4ff0e] transition-colors">
+              Contact Us
+            </button>
           </div>
         </div>
       </div>
