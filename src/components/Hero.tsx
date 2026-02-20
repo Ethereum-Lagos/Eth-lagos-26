@@ -104,7 +104,7 @@ export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: Her
             >
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-[#59A9DC]" />
-                <span>March 15-17, 2026</span>
+                <span>July 16-18, 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-[#59A9DC]" />
