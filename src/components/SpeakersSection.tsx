@@ -41,7 +41,7 @@ export function SpeakersSection() {
   ];
 
   return (
-    <section id="speakers" className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="speakers" className="py-24 px-6 bg-[#001929]">
       <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
@@ -60,7 +60,7 @@ export function SpeakersSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-[#1a1a1a] rounded-2xl p-6 hover:bg-[#222] transition-all border border-transparent hover:border-[#c4ff0e]/20"
+              className="bg-[#002340] rounded-2xl p-6 hover:bg-[#003050] transition-all border border-transparent hover:border-[#FF72AA]/20"
             >
               <div className="flex items-start gap-4">
                 <img

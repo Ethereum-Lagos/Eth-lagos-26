@@ -33,26 +33,26 @@ export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: Her
           alt="Lagos Skyscrapers"
           className="w-full h-full object-cover scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001929]/90 via-[#001929]/80 to-[#001929]" />
       </div>
 
       {/* Animated Grid Overlay */}
       <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(196,255,14,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(196,255,14,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,114,170,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,114,170,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
       {/* Floating Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c4ff0e]/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#c4ff0e]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF72AA]/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#59A9DC]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
       {/* Content */}
       <div className="relative z-10">
-        <TopNav 
+        <TopNav
           connectedWallet={connectedWallet}
           onWalletClick={onWalletClick}
           onWalletDisconnect={onWalletDisconnect}
         />
-        
+
         <div className="flex flex-col items-center justify-center min-h-[80vh] px-6">
           <motion.div
             initial={{ scale: 0, opacity: 0, rotate: -180 }}
@@ -60,8 +60,13 @@ export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: Her
             transition={{ duration: 0.8, type: 'spring', bounce: 0.4 }}
             className="mb-8 relative"
           >
-            <div className="absolute inset-0 bg-[#c4ff0e]/20 rounded-full blur-2xl animate-pulse" />
-            <EthereumLogo className="w-32 h-32 md:w-40 md:h-40 relative z-10 drop-shadow-[0_0_30px_rgba(196,255,14,0.3)]" />
+            <div className="absolute inset-0 bg-[#FF72AA]/20 rounded-full blur-2xl animate-pulse" />
+            <img
+              src={new URL('../assets/logo.png', import.meta.url).href}
+              alt="EthLagos Logo"
+              className="w-32 h-32object-cover"
+            />
+            {/* <EthereumLogo className="w-32 h-32 md:w-40 md:h-40 relative z-10 drop-shadow-[0_0_30px_rgba(255,114,170,0.5)]" /> */}
           </motion.div>
 
           <motion.div
@@ -71,12 +76,12 @@ export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: Her
             className="text-center mb-8"
           >
             <h1
-              className="text-7xl md:text-9xl text-[#c4ff0e] mb-4 tracking-tight relative"
+              className="text-7xl md:text-9xl text-[#FF72AA] mb-4 tracking-tight relative"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
               EthLagos
               <motion.div
-                className="absolute -inset-2 bg-[#c4ff0e]/5 blur-2xl -z-10"
+                className="absolute -inset-2 bg-[#FF72AA]/10 blur-2xl -z-10"
                 animate={{ opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
@@ -98,15 +103,15 @@ export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: Her
               className="flex flex-wrap items-center justify-center gap-6 mb-10 text-gray-400"
             >
               <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-[#c4ff0e]" />
+                <Calendar className="w-5 h-5 text-[#59A9DC]" />
                 <span>March 15-17, 2026</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#c4ff0e]" />
+                <MapPin className="w-5 h-5 text-[#59A9DC]" />
                 <span>Lagos, Nigeria</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-[#c4ff0e]" />
+                <Users className="w-5 h-5 text-[#59A9DC]" />
                 <span>1000+ Attendees</span>
               </div>
             </motion.div>
@@ -117,7 +122,7 @@ export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: Her
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9 }}
               onClick={scrollToAgenda}
-              className="px-8 py-4 bg-[#c4ff0e] hover:bg-[#b3e600] text-black rounded-lg transition-all hover:scale-105 shadow-lg shadow-[#c4ff0e]/20 text-lg relative overflow-hidden group"
+              className="px-8 py-4 bg-[#FF72AA] hover:bg-[#ff5a99] text-white rounded-lg transition-all hover:scale-105 shadow-lg shadow-[#FF72AA]/20 text-lg relative overflow-hidden group"
             >
               <span className="relative z-10">View Full Agenda</span>
               <motion.div
@@ -135,9 +140,9 @@ export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: Her
       </div>
 
       {/* MainNav positioned at bottom of hero, closer to agenda section */}
-      {/* <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-center">
+      <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-center">
         <MainNav />
-      </div> */}
+      </div>
     </section>
   );
 }

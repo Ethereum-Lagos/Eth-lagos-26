@@ -66,17 +66,17 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-[#1a1a1a] border border-[#c4ff0e]/30 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl"
+              className="bg-[#002340] border border-[#FF72AA]/30 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl"
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-[#c4ff0e]/20">
+              <div className="flex items-center justify-between p-6 border-b border-[#FF72AA]/20">
                 <div className="flex items-center gap-3">
-                  <Wallet className="w-6 h-6 text-[#c4ff0e]" />
+                  <Wallet className="w-6 h-6 text-[#FF72AA]" />
                   <h2 className="text-2xl text-white">Connect Wallet</h2>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-[#c4ff0e]/10 rounded-lg transition-colors"
+                  className="p-2 hover:bg-[#FF72AA]/10 rounded-lg transition-colors"
                 >
                   <X className="w-5 h-5 text-gray-400" />
                 </button>
@@ -94,7 +94,7 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
                       key={wallet.name}
                       onClick={() => handleConnect(wallet.name)}
                       disabled={connecting !== null}
-                      className="w-full bg-[#2a2a2a] hover:bg-[#333] border border-[#c4ff0e]/20 hover:border-[#c4ff0e]/50 rounded-xl p-4 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-[#001929] hover:bg-[#003050] border border-[#59A9DC]/20 hover:border-[#FF72AA]/50 rounded-xl p-4 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <div className="flex items-center gap-4">
                         <span className="text-4xl">{wallet.icon}</span>
@@ -103,7 +103,7 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
                           <div className="text-sm text-gray-400">{wallet.description}</div>
                         </div>
                         {connecting === wallet.name && (
-                          <div className="w-5 h-5 border-2 border-[#c4ff0e] border-t-transparent rounded-full animate-spin" />
+                          <div className="w-5 h-5 border-2 border-[#FF72AA] border-t-transparent rounded-full animate-spin" />
                         )}
                       </div>
                     </button>

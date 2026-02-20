@@ -34,8 +34,8 @@ export function MainNav() {
         <button
           key={item.id}
           onClick={() => scrollToSection(item.id)}
-          className={`text-white hover:text-[#c4ff0e] transition-colors pb-1 ${
-            item.id === 'agenda' ? 'border-b-2 border-[#c4ff0e]' : ''
+          className={`text-white hover:text-[#FF72AA] transition-colors pb-1 ${
+            item.id === 'agenda' ? 'border-b-2 border-[#FF72AA]' : ''
           }`}
         >
           {item.label}

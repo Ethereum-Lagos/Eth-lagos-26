@@ -74,7 +74,7 @@ export function AgendaSection({ onWalletClick, connectedWallet }: AgendaSectionP
           {!connectedWallet && (
             <button 
               onClick={onWalletClick}
-              className="px-6 py-3 bg-[#c4ff0e] hover:bg-[#b3e600] text-black rounded-lg transition-colors"
+              className="px-6 py-3 bg-[#FF72AA] hover:bg-[#ff5a99] text-white rounded-lg transition-colors"
             >Register For Event</button>
           )}
         </div>
@@ -87,9 +87,9 @@ export function AgendaSection({ onWalletClick, connectedWallet }: AgendaSectionP
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-[#1a1a1a] rounded-2xl p-6 hover:bg-[#222] transition-all border border-transparent hover:border-[#c4ff0e]/30 group"
+              className="bg-[#001929] rounded-2xl p-6 hover:bg-[#002340] transition-all border border-transparent hover:border-[#FF72AA]/30 group"
             >
-              <h3 className="text-white text-lg mb-3 group-hover:text-[#c4ff0e] transition-colors">
+              <h3 className="text-white text-lg mb-3 group-hover:text-[#FF72AA] transition-colors">
                 {event.title}
               </h3>
               <p className="text-gray-400 text-sm mb-4 min-h-[60px] leading-relaxed">
@@ -98,18 +98,18 @@ export function AgendaSection({ onWalletClick, connectedWallet }: AgendaSectionP
               
               <div className="space-y-2 mb-4">
                 <div className="flex items-center gap-2 text-gray-500 text-sm">
-                  <Calendar className="w-4 h-4 text-[#c4ff0e]" />
+                  <Calendar className="w-4 h-4 text-[#59A9DC]" />
                   <span>{event.date}</span>
                 </div>
                 {event.time && (
                   <div className="flex items-center gap-2 text-gray-500 text-sm">
-                    <Clock className="w-4 h-4 text-[#c4ff0e]" />
+                    <Clock className="w-4 h-4 text-[#59A9DC]" />
                     <span>{event.time}</span>
                   </div>
                 )}
                 {event.location && (
                   <div className="flex items-center gap-2 text-gray-500 text-sm">
-                    <MapPin className="w-4 h-4 text-[#c4ff0e]" />
+                    <MapPin className="w-4 h-4 text-[#59A9DC]" />
                     <span>{event.location}</span>
                   </div>
                 )}
