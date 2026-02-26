@@ -2,7 +2,6 @@ import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const staniImageSrc = new URL('../../web-asset/Stani Kulechov AAVE.jpg', import.meta.url).href;
 
 export function SpeakersSection() {
   const speakers = [
@@ -24,7 +23,7 @@ export function SpeakersSection() {
     {
       name: 'Stani Kulechov',
       title: 'Founder & CEO @ Aave',
-      image: staniImageSrc,
+      image: '/web-asset/Stani Kulechov AAVE.jpg',
     },
     {
       name: 'Sandeep Nailwal',
