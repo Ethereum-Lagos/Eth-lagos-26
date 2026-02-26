@@ -1,148 +1,123 @@
 import { motion } from 'motion/react';
-import { EthereumLogo } from './EthereumLogo';
+import { MapPin, ArrowRight, CalendarDays } from 'lucide-react';
 import { TopNav } from './TopNav';
-import { MainNav } from './MainNav';
-import { Calendar, MapPin, Users } from 'lucide-react';
+import logo from '../assets/logo.png';
 
-interface HeroProps {
-  connectedWallet: string | null;
-  onWalletClick: () => void;
-  onWalletDisconnect: () => void;
-}
+const LUMA_REGISTRATION_URL = 'https://luma.com/sa6qy16d';
 
-export function Hero({ connectedWallet, onWalletClick, onWalletDisconnect }: HeroProps) {
-  const scrollToAgenda = () => {
-    const element = document.getElementById('agenda');
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
+export function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1749058387715-1efad0eadc8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWdvcyUyMHNreXNjcmFwZXJzJTIwY2l0eXNjYXBlfGVufDF8fHx8MTc3MDc5NzgwNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Lagos Skyscrapers"
-          className="w-full h-full object-cover scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001929]/90 via-[#001929]/80 to-[#001929]" />
+    <section className="relative min-h-screen bg-[#001929] overflow-hidden flex flex-col">
+      {/* Top Navigation Overlay */}
+      <div className="absolute top-0 left-0 right-0 z-50">
+        <TopNav />
       </div>
 
-      {/* Animated Grid Overlay */}
+      {/* Background with Lagos Skyline */}
       <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,114,170,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,114,170,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
-      </div>
-
-      {/* Floating Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF72AA]/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#59A9DC]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-      {/* Content */}
-      <div className="relative z-10">
-        <TopNav
-          connectedWallet={connectedWallet}
-          onWalletClick={onWalletClick}
-          onWalletDisconnect={onWalletDisconnect}
+        <img
+          src="/web-asset/victoria-island-view.png"
+          alt="Lagos Skyline"
+          className="w-full h-full object-cover"
         />
-
-        <div className="flex flex-col items-center justify-center min-h-[80vh] px-6">
-          <motion.div
-            initial={{ scale: 0, opacity: 0, rotate: -180 }}
-            animate={{ scale: 1, opacity: 1, rotate: 0 }}
-            transition={{ duration: 0.8, type: 'spring', bounce: 0.4 }}
-            className="mb-8 relative"
-          >
-            <div className="absolute inset-0 bg-[#FF72AA]/20 rounded-full blur-2xl animate-pulse" />
-            <img
-              src={new URL('../assets/logo.png', import.meta.url).href}
-              alt="EthLagos Logo"
-              className="w-32 h-32object-cover"
-            />
-            {/* <EthereumLogo className="w-32 h-32 md:w-40 md:h-40 relative z-10 drop-shadow-[0_0_30px_rgba(255,114,170,0.5)]" /> */}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-center mb-8"
-          >
-            <h1
-              className="text-7xl md:text-9xl text-[#FF72AA] mb-4 tracking-tight relative"
-              style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
-            >
-              EthLagos
-              <motion.div
-                className="absolute -inset-2 bg-[#FF72AA]/10 blur-2xl -z-10"
-                animate={{ opacity: [0.3, 0.6, 0.3] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-            </h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="text-xl md:text-2xl text-gray-300 mb-8"
-            >
-              Africa's Premier Ethereum Conference
-            </motion.p>
-
-            {/* Event Details */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="flex flex-wrap items-center justify-center gap-6 mb-10 text-gray-400"
-            >
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-[#59A9DC]" />
-                <span>July 16-18, 2026</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#59A9DC]" />
-                <span>Lagos, Nigeria</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-[#59A9DC]" />
-                <span>1000+ Attendees</span>
-              </div>
-            </motion.div>
-
-            {/* CTA Button */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.9 }}
-              onClick={scrollToAgenda}
-              className="px-8 py-4 bg-[#FF72AA] hover:bg-[#ff5a99] text-white rounded-lg transition-all hover:scale-105 shadow-lg shadow-[#FF72AA]/20 text-lg relative overflow-hidden group"
-            >
-              <span className="relative z-10">View Full Agenda</span>
-              <motion.div
-                className="absolute inset-0 bg-white/20"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
-                transition={{ duration: 0.5 }}
-              />
-            </motion.button>
-          </motion.div>
-
-
-        </div>
-
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001929] via-[#001929]/60 to-transparent" />
       </div>
 
-      {/* MainNav positioned at bottom of hero, closer to agenda section */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-center">
-        <MainNav />
+      {/* Content Container */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 flex-1 flex items-center pt-24">
+        <div className="grid lg:grid-cols-[1.2fr_0.6fr_1.2fr] gap-4 items-center w-full">
+          {/* Left Side: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col z-20"
+          >
+            <h1 className="text-[70px] md:text-[100px] lg:text-[110px] font-black leading-[0.85] tracking-tighter mb-6 text-white uppercase" style={{ fontFamily: 'Outfit, sans-serif' }}>
+              ETH<br />
+              <span className="text-[#FF72AA]">LAGOS</span>
+            </h1>
+
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#FF72AA]/40 bg-[#FF72AA]/10 px-5 py-2.5 mb-6 text-[#FFD4E7] shadow-[0_0_30px_rgba(255,114,170,0.2)]">
+              <CalendarDays className="w-4 h-4 text-[#FF72AA]" />
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.18em]">July 16 to July 18</span>
+            </div>
+
+            <p className="text-xl md:text-2xl text-white/70 max-w-sm font-medium leading-[1.2] mb-8">
+              Africa's Premier Ethereum Conference & Developer Summit
+            </p>
+
+            <div className="flex items-start gap-2 text-white/40 mb-10">
+              <MapPin className="w-5 h-5 text-[#FF72AA] mt-1 shrink-0" />
+              <span className="text-lg font-bold uppercase tracking-tight">NATIONAL THEATRE, LAGOS</span>
+            </div>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-10 mb-12">
+              <StatItem label="Attendees" value="1000+" />
+              <StatItem label="Speakers" value="50+" />
+              <StatItem label="Prize Pool" value="$50K" isAccent />
+            </div>
+
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href={LUMA_REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit px-10 py-5 bg-[#FF72AA] text-[#001929] rounded-2xl font-black text-xl flex items-center gap-3 transition-all hover:bg-[#ff5a99] shadow-2xl shadow-[#FF72AA]/20"
+            >
+              Register Now
+              <ArrowRight className="w-6 h-6 -rotate-45" />
+            </motion.a>
+          </motion.div>
+
+          {/* Middle: Pronounced Community Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="hidden lg:flex flex-col items-center justify-center p-4 relative z-10 pl-20"
+          >
+            <div className="absolute inset-0 bg-[#FF72AA]/5 blur-[120px] rounded-full" />
+            <img
+              src={logo}
+              alt="Ethereum Lagos Community"
+              className="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_60px_rgba(255,114,170,0.5)] relative z-10 brightness-110"
+            />
+          </motion.div>
+
+          {/* Right Side: Larger Bridge Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative lg:scale-125 lg:translate-x-12 z-0"
+          >
+            {/* Blue glow background to match the bridge asset */}
+            <div className="absolute inset-0 bg-[#59A9DC]/10 blur-[150px] rounded-full" />
+
+            <img
+              src="/web-asset/lagos-bridge.png"
+              alt="Lagos Bridge"
+              className="relative z-0 w-full h-auto drop-shadow-[0_0_100px_rgba(89,169,220,0.4)]"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
+  );
+}
+
+function StatItem({ label, value, isAccent = false }: { label: string, value: string, isAccent?: boolean }) {
+  return (
+    <div className="flex flex-col">
+      <div className={`text-3xl md:text-4xl lg:text-5xl font-black mb-1 ${isAccent ? 'text-[#FF72AA]' : 'text-white'}`}>
+        {value}
+      </div>
+      <div className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em] leading-none">
+        {label}
+      </div>
+    </div>
   );
 }

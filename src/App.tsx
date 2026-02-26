@@ -1,46 +1,27 @@
-import { useState } from 'react';
 import { Hero } from './components/Hero';
+import { Features } from './components/Features';
+import { StatsRibbon } from './components/StatsRibbon';
+import { LogoShowcase } from './components/LogoShowcase';
+import { About } from './components/About';
 import { AgendaSection } from './components/AgendaSection';
 import { SpeakersSection } from './components/SpeakersSection';
 import { HackathonSection } from './components/HackathonSection';
-import { ProjectIncubationSection } from './components/ProjectIncubationSection';
+import { SponsorsSection } from './components/SponsorsSection';
 import { Footer } from './components/Footer';
-import { WalletModal } from './components/WalletModal';
 
 export default function App() {
-  const [walletModalOpen, setWalletModalOpen] = useState(false);
-  const [connectedWallet, setConnectedWallet] = useState<string | null>(null);
-
-  const handleWalletConnect = (walletAddress: string) => {
-    setConnectedWallet(walletAddress);
-    setWalletModalOpen(false);
-  };
-
-  const handleWalletDisconnect = () => {
-    setConnectedWallet(null);
-  };
-
   return (
-    <div className="min-h-screen bg-[#001929]">
-      <Hero 
-        connectedWallet={connectedWallet}
-        onWalletClick={() => setWalletModalOpen(true)}
-        onWalletDisconnect={handleWalletDisconnect}
-      />
-      <AgendaSection 
-        onWalletClick={() => setWalletModalOpen(true)}
-        connectedWallet={connectedWallet}
-      />
+    <div className="min-h-screen bg-[#001929] selection:bg-[#FF72AA]/30 selection:text-[#FF72AA]">
+      <Hero />
+      <Features />
+      <StatsRibbon />
+      <LogoShowcase />
+      <About />
+      <AgendaSection />
       <SpeakersSection />
       <HackathonSection />
-      <ProjectIncubationSection />
+      <SponsorsSection />
       <Footer />
-      
-      <WalletModal
-        isOpen={walletModalOpen}
-        onClose={() => setWalletModalOpen(false)}
-        onConnect={handleWalletConnect}
-      />
     </div>
   );
 }

@@ -1,12 +1,9 @@
-import { LogOut } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import logo from '../assets/logo.png';
 
-interface TopNavProps {
-  connectedWallet: string | null;
-  onWalletClick: () => void;
-  onWalletDisconnect: () => void;
-}
+const LUMA_REGISTRATION_URL = 'https://luma.com/sa6qy16d';
 
-export function TopNav({ connectedWallet, onWalletClick, onWalletDisconnect }: TopNavProps) {
+export function TopNav() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -20,56 +17,35 @@ export function TopNav({ connectedWallet, onWalletClick, onWalletDisconnect }: T
     }
   };
 
-  const formatWalletAddress = (address: string) => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  };
-
   return (
-    <nav className="flex items-center justify-between px-6 md:px-12 py-6">
-      <div className="flex items-center gap-2">
-        {/* <div className="w-4 h-4 bg-[#FF72AA] transform rotate-45"></div> */}
+    <nav className="flex items-center justify-between px-4 md:px-16 py-5 md:py-8 gap-3">
+      <div className="flex items-center gap-4">
         <img
-          src={new URL('../assets/logo.png', import.meta.url).href}
+          src={logo}
           alt="EthLagos Logo"
-          className="logo object-cover"
+          className="w-12 h-12 md:w-16 md:h-16 object-contain brightness-110 drop-shadow-lg"
         />
-        {/* <span className="text-white text-lg">EthLagos</span> */}
+        <span className="text-xl md:text-3xl font-black text-white tracking-tighter uppercase" style={{ fontFamily: 'Outfit, sans-serif' }}>
+          ETH<span className="text-[#FF72AA]">LAGOS</span>
+        </span>
       </div>
 
-      <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-        <button onClick={() => scrollToSection('agenda')} className="hover:text-[#FF72AA] transition-colors">
-          Agenda
-        </button>
-        <button onClick={() => scrollToSection('speakers')} className="hover:text-[#FF72AA] transition-colors">
-          Speakers
-        </button>
-        <button onClick={() => scrollToSection('hackathon')} className="hover:text-[#FF72AA] transition-colors">
-          Hackathon
-        </button>
-        <button onClick={() => scrollToSection('incubation')} className="hover:text-[#FF72AA] transition-colors">
-          Project Incubation
-        </button>
+      <div className="hidden lg:flex items-center gap-10 text-sm font-bold uppercase tracking-[0.16em] text-white/60">
+        <button onClick={() => scrollToSection('about')} className="hover:text-white transition-all cursor-pointer">About</button>
+        <button onClick={() => scrollToSection('speakers')} className="hover:text-white transition-all cursor-pointer">Speakers</button>
+        <button onClick={() => scrollToSection('agenda')} className="hover:text-white transition-all cursor-pointer">Schedule</button>
+        <button onClick={() => scrollToSection('about')} className="hover:text-white transition-all cursor-pointer">Venue</button>
       </div>
 
-      {connectedWallet ? (
-        <div className="flex items-center gap-2">
-          <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-[#FF72AA]/10 border border-[#FF72AA]/30 text-[#FF72AA] rounded-lg text-sm">
-            <span>{formatWalletAddress(connectedWallet)}</span>
-          </div>
-          <button
-            onClick={onWalletDisconnect}
-            className="p-2 bg-[#FE0115]/20 hover:bg-[#FE0115]/30 text-[#FE0115] rounded-lg transition-colors"
-            title="Disconnect"
-          >
-            <LogOut className="w-4 h-4" />
-          </button>
-        </div>
-      ) : (
-        <button 
-          onClick={onWalletClick}
-          className="px-6 py-2 bg-[#FF72AA] hover:bg-[#ff5a99] text-white rounded-lg transition-colors text-sm"
-        >Register For Event</button>
-      )}
+      <a
+        href={LUMA_REGISTRATION_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 md:px-8 py-2.5 md:py-4 bg-[#FF72AA] hover:bg-[#ff5a99] text-[#001929] rounded-xl font-black text-[9px] md:text-[10px] uppercase tracking-[0.16em] md:tracking-[0.3em] flex items-center gap-1.5 md:gap-2 group shadow-lg shadow-[#FF72AA]/20 whitespace-nowrap"
+      >
+        Register Now
+        <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 -rotate-45 group-hover:rotate-0 transition-transform" />
+      </a>
     </nav>
   );
 }

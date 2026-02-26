@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, User, Mail, Briefcase, CheckCircle } from 'lucide-react';
+import { X, User, Mail, Briefcase, CheckCircle, Globe, ShieldCheck, Zap } from 'lucide-react';
 import { useState } from 'react';
 
 interface RegistrationModalProps {
@@ -23,11 +23,11 @@ export function RegistrationModal({ isOpen, onClose, connectedWallet }: Registra
     'DeFi',
     'NFTs',
     'DAOs',
-    'Smart Contracts',
-    'Layer 2',
-    'Gaming',
-    'Social Impact',
-    'Developer Tools',
+    'Scaling',
+    'Privacy',
+    'Security',
+    'Social',
+    'Infra',
   ];
 
   const handleInterestToggle = (interest: string) => {
@@ -42,10 +42,7 @@ export function RegistrationModal({ isOpen, onClose, connectedWallet }: Registra
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -66,159 +63,135 @@ export function RegistrationModal({ isOpen, onClose, connectedWallet }: Registra
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-[#001929]/90 backdrop-blur-xl z-[100]"
           />
 
-          {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-gray-900 border border-purple-500/30 rounded-2xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl"
+              className="bg-[#001929] border border-white/10 rounded-[40px] w-full max-w-2xl my-8 overflow-hidden shadow-[0_0_100px_rgba(255,114,170,0.1)] relative"
             >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF72AA]/5 rounded-full blur-[100px] -mr-20 -mt-20" />
+
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-purple-500/20">
-                <h2 className="text-2xl text-white">Register for EthLagos 2026</h2>
+              <div className="flex items-center justify-between p-8 border-b border-white/5 relative z-10">
+                <div>
+                  <h2 className="text-3xl font-black text-white mb-1" style={{ fontFamily: 'Outfit, sans-serif' }}>Join the <span className="text-[#FF72AA]">Movement</span></h2>
+                  <p className="text-white/40 text-sm font-medium">Register for EthLagos 2026</p>
+                </div>
                 <button
                   onClick={handleClose}
-                  className="p-2 hover:bg-purple-600/20 rounded-lg transition-colors"
+                  className="w-12 h-12 bg-white/5 hover:bg-white/10 rounded-2xl flex items-center justify-center transition-all group"
                 >
-                  <X className="w-5 h-5 text-gray-400" />
+                  <X className="w-5 h-5 text-white/40 group-hover:text-white" />
                 </button>
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-8 relative z-10">
                 {submitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <CheckCircle className="w-20 h-20 text-green-400 mx-auto mb-6" />
-                    <h3 className="text-3xl text-white mb-4">Registration Successful!</h3>
-                    <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                      Thank you for registering for EthLagos 2026. We've sent a confirmation
-                      email to {formData.email}. See you in March!
+                    <div className="w-24 h-24 bg-[#FF72AA]/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                      <CheckCircle className="w-12 h-12 text-[#FF72AA]" />
+                    </div>
+                    <h3 className="text-4xl font-black text-white mb-4">You're In!</h3>
+                    <p className="text-white/60 mb-10 max-w-md mx-auto text-lg">
+                      Welcome to the community. We've sent a special invitation to your inbox. Get ready for an unforgettable experience in Lagos.
                     </p>
-                    {connectedWallet && (
-                      <div className="bg-purple-600/10 border border-purple-500/30 rounded-lg p-4 mb-6 max-w-md mx-auto">
-                        <p className="text-sm text-gray-400 mb-1">Your NFT ticket will be sent to:</p>
-                        <p className="text-purple-400 font-mono text-sm">{connectedWallet}</p>
-                      </div>
-                    )}
                     <button
                       onClick={handleClose}
-                      className="px-8 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors"
+                      className="px-12 py-4 bg-[#FF72AA] text-white rounded-2xl font-black shadow-xl shadow-[#FF72AA]/20 hover:scale-[1.02] transition-all"
                     >
-                      Close
+                      LET'S GO
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    {!connectedWallet && (
-                      <div className="bg-orange-600/10 border border-orange-500/30 rounded-lg p-4">
-                        <p className="text-sm text-orange-400">
-                          💡 Connect your wallet to receive an NFT ticket!
-                        </p>
-                      </div>
-                    )}
-
+                  <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm text-gray-400 mb-2">
-                          Full Name *
-                        </label>
-                        <div className="relative">
-                          <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <div className="space-y-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-white/30 ml-1">Full Name</label>
+                        <div className="relative group">
+                          <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-[#FF72AA] transition-colors" />
                           <input
                             type="text"
                             required
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full bg-gray-800/50 border border-purple-500/20 rounded-lg pl-11 pr-4 py-3 text-white focus:border-purple-500/50 focus:outline-none transition-colors"
-                            placeholder="John Doe"
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-4 text-white focus:border-[#FF72AA]/50 focus:outline-none transition-all"
+                            placeholder="Vitalik Buterin"
                           />
                         </div>
                       </div>
 
-                      <div>
-                        <label className="block text-sm text-gray-400 mb-2">
-                          Email Address *
-                        </label>
-                        <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <div className="space-y-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-white/30 ml-1">Email Address</label>
+                        <div className="relative group">
+                          <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-[#FF72AA] transition-colors" />
                           <input
                             type="email"
                             required
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full bg-gray-800/50 border border-purple-500/20 rounded-lg pl-11 pr-4 py-3 text-white focus:border-purple-500/50 focus:outline-none transition-colors"
-                            placeholder="john@example.com"
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-4 text-white focus:border-[#FF72AA]/50 focus:outline-none transition-all"
+                            placeholder="vb@ethereum.org"
                           />
                         </div>
                       </div>
 
-                      <div>
-                        <label className="block text-sm text-gray-400 mb-2">
-                          Company / Organization
-                        </label>
-                        <div className="relative">
-                          <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
-                          <input
-                            type="text"
-                            value={formData.company}
-                            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                            className="w-full bg-gray-800/50 border border-purple-500/20 rounded-lg pl-11 pr-4 py-3 text-white focus:border-purple-500/50 focus:outline-none transition-colors"
-                            placeholder="Acme Inc."
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm text-gray-400 mb-2">
-                          Role *
-                        </label>
+                      <div className="space-y-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-white/30 ml-1">Role</label>
                         <select
                           required
                           value={formData.role}
                           onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                          className="w-full bg-gray-800/50 border border-purple-500/20 rounded-lg px-4 py-3 text-white focus:border-purple-500/50 focus:outline-none transition-colors"
+                          className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-4 text-white focus:border-[#FF72AA]/50 focus:outline-none transition-all appearance-none cursor-pointer"
                         >
-                          <option value="">Select your role</option>
-                          <option value="developer">Developer</option>
-                          <option value="designer">Designer</option>
-                          <option value="entrepreneur">Entrepreneur</option>
-                          <option value="investor">Investor</option>
-                          <option value="student">Student</option>
-                          <option value="researcher">Researcher</option>
-                          <option value="other">Other</option>
+                          <option value="" className="bg-[#001929]">Select Role</option>
+                          <option value="developer" className="bg-[#001929]">Developer</option>
+                          <option value="founder" className="bg-[#001929]">Founder</option>
+                          <option value="investor" className="bg-[#001929]">Investor</option>
+                          <option value="creator" className="bg-[#001929]">Artist / Creator</option>
                         </select>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-white/30 ml-1">Company</label>
+                        <div className="relative group">
+                          <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-[#FF72AA] transition-colors" />
+                          <input
+                            type="text"
+                            value={formData.company}
+                            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-4 text-white focus:border-[#FF72AA]/50 focus:outline-none transition-all"
+                            placeholder="Ethereum Foundation"
+                          />
+                        </div>
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-sm text-gray-400 mb-3">
-                        Areas of Interest
-                      </label>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <div className="space-y-4">
+                      <label className="text-xs font-black uppercase tracking-widest text-white/30 ml-1">Interests</label>
+                      <div className="flex flex-wrap gap-2">
                         {interests.map((interest) => (
                           <button
                             key={interest}
                             type="button"
                             onClick={() => handleInterestToggle(interest)}
-                            className={`px-3 py-2 rounded-lg border transition-all ${
-                              formData.interests.includes(interest)
-                                ? 'bg-purple-600/30 border-purple-500/50 text-purple-400'
-                                : 'bg-gray-800/50 border-purple-500/20 text-gray-400 hover:border-purple-500/40'
-                            }`}
+                            className={`px-4 py-2 rounded-xl text-xs font-bold border transition-all ${formData.interests.includes(interest)
+                                ? 'bg-[#FF72AA] border-[#FF72AA] text-white shadow-lg shadow-[#FF72AA]/20'
+                                : 'bg-white/5 border-white/10 text-white/40 hover:border-white/30'
+                              }`}
                           >
                             {interest}
                           </button>
@@ -226,25 +199,18 @@ export function RegistrationModal({ isOpen, onClose, connectedWallet }: Registra
                       </div>
                     </div>
 
-                    {connectedWallet && (
-                      <div className="bg-purple-600/10 border border-purple-500/30 rounded-lg p-4">
-                        <p className="text-sm text-gray-400 mb-1">Connected Wallet</p>
-                        <p className="text-purple-400 font-mono text-sm">{connectedWallet}</p>
-                      </div>
-                    )}
-
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full py-4 bg-purple-600 hover:bg-purple-500 disabled:bg-purple-600/50 text-white rounded-lg transition-colors flex items-center justify-center gap-2"
+                      className="w-full py-5 bg-[#FF72AA] hover:bg-[#ff5a99] disabled:opacity-50 text-white rounded-2xl font-black text-lg transition-all shadow-2xl shadow-[#FF72AA]/20 flex items-center justify-center gap-3"
                     >
                       {submitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                          <span>Submitting...</span>
+                          <div className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin" />
+                          <span>SECUREING YOUR SPOT...</span>
                         </>
                       ) : (
-                        'Complete Registration'
+                        'COMPLETE REGISTRATION'
                       )}
                     </button>
                   </form>

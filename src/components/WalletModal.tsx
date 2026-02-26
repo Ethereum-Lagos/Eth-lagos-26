@@ -36,13 +36,13 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
 
   const handleConnect = async (walletName: string) => {
     setConnecting(walletName);
-    
+
     // Simulate wallet connection
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     // Generate a mock wallet address
     const mockAddress = '0x' + Math.random().toString(16).substring(2, 42).padEnd(40, '0');
-    
+
     onConnect(mockAddress);
     setConnecting(null);
   };
@@ -72,7 +72,7 @@ export function WalletModal({ isOpen, onClose, onConnect }: WalletModalProps) {
               <div className="flex items-center justify-between p-6 border-b border-[#FF72AA]/20">
                 <div className="flex items-center gap-3">
                   <Wallet className="w-6 h-6 text-[#FF72AA]" />
-                  <h2 className="text-2xl text-white">Connect Wallet</h2>
+                  <h2 className="text-2xl text-white font-black uppercase tracking-tighter">Register Now</h2>
                 </div>
                 <button
                   onClick={onClose}

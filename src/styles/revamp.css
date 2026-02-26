@@ -1,0 +1,56 @@
+:root {
+    --background: #001929;
+    --foreground: #ffffff;
+    --primary: #FF72AA;
+    --secondary: #59A9DC;
+    --accent: #F5DB5E;
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: var(--font-body);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+    }
+}
+
+.text-gradient-pink {
+    background: linear-gradient(to right, #FF72AA, #FFB6D3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+}

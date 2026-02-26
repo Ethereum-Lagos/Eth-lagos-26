@@ -28,17 +28,16 @@ export function MainNav() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6 }}
-      className="flex flex-wrap items-center justify-center gap-8 px-6"
+      className="flex flex-wrap items-center justify-center gap-12 px-6 border-b border-white/5 w-full max-w-7xl"
     >
       {navItems.map((item, index) => (
         <button
           key={item.id}
           onClick={() => scrollToSection(item.id)}
-          className={`text-white hover:text-[#FF72AA] transition-colors pb-1 ${
-            item.id === 'agenda' ? 'border-b-2 border-[#FF72AA]' : ''
-          }`}
+          className="text-white/40 hover:text-[#FF72AA] transition-all pb-6 text-sm font-black uppercase tracking-widest relative group"
         >
           {item.label}
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF72AA] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
         </button>
       ))}
     </motion.nav>
