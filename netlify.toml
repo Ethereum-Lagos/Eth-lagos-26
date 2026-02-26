@@ -1,7 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "npm install --include=optional && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--include=optional"
+  NPM_CONFIG_INCLUDE = "optional"
