@@ -54,7 +54,8 @@ export function SpeakersSection() {
             className="text-5xl md:text-7xl font-black text-[#001929] mb-4 tracking-tighter"
             style={{ fontFamily: 'Outfit, sans-serif' }}
           >
-            LEARN FROM THE <span className="text-[#FF72AA]">BEST</span>
+            LEARN FROM THE <span className="text-[#FF72AA]">BEST</span> <br/>
+            <span className="text-2xl md:text-4xl text-[#001929]/40 tracking-widest uppercase inline-block mt-4">(SPEAKERS IN VIEW)</span>
           </motion.h2>
           <p className="text-[#001929]/60 text-lg max-w-2xl mx-auto font-medium">
             Industry leaders, protocol founders, and visionaries sharing insights on building the decentralized future.

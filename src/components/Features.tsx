@@ -4,24 +4,24 @@ import { Users, Code, Rocket, Heart } from 'lucide-react';
 export function Features() {
     const features = [
         {
-            title: 'Developer Summit',
-            desc: 'Deep technical workshops, protocol discussions, and hands-on coding sessions with Ethereum core developers.',
-            icon: Code,
+            title: 'The UX Revolution',
+            desc: 'Making Ethereum invisible to the end-user. Keywords: ERC-4337, Paymasters (Gasless), Intents, Mobile-First Design.',
+            icon: Heart,
         },
         {
-            title: 'Community Building',
-            desc: 'Connect with 1000+ builders, investors, and innovators shaping the future of Web3 in Africa.',
-            icon: Users,
-        },
-        {
-            title: 'Hackathon',
-            desc: '48-hour buildathon with $50,000 in prizes for the most innovative dApps and infrastructure projects.',
+            title: 'L2 & Agent Economy',
+            desc: 'Affordable rails for humans and autonomous machines. Keywords: ZK vs. Optimistic Rollups, The Superchain (OP Stack), AI Agents (ERC-8004), Low-cost Blobs.',
             icon: Rocket,
         },
         {
-            title: 'Global Impact',
-            desc: 'Bringing together thought leaders from Ethereum Foundation, leading protocols, and African innovators.',
-            icon: Heart,
+            title: 'Real-World Ethereum',
+            desc: 'Moving beyond trading to settling real economic value. Keywords: Tokenizing Nigerian Assets (T-Bills, Real Estate), ZK-Identity, Advanced DeFi Primitives.',
+            icon: Code,
+        },
+        {
+            title: 'Cypherpunk Lagos',
+            desc: 'Keeping the core ethos alive as we scale. Keywords: Decentralized Social (DeSo), Privacy Tools (ZK), Quadratic Funding.',
+            icon: Users,
         },
     ];
 
@@ -32,10 +32,10 @@ export function Features() {
 
             <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
                 <h2 className="text-5xl md:text-7xl font-black text-[#001929] mb-4 tracking-tighter" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                    WHAT WILL YOU FIND?
+                    ENGINEERED FOR IMPACT
                 </h2>
-                <p className="text-[#001929]/70 text-lg md:text-xl max-w-2xl mx-auto mb-20 font-medium">
-                    Join Africa's leading Ethereum conference to learn, build, and connect with the global blockchain community.
+                <p className="text-[#001929]/70 text-lg md:text-xl max-w-2xl mx-auto mb-20 font-black uppercase tracking-widest">
+                    CORE CONFERENCE TRACKS
                 </p>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

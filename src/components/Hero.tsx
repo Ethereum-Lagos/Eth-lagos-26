@@ -34,22 +34,26 @@ export function Hero() {
             className="flex flex-col z-20"
           >
             <h1 className="text-[70px] md:text-[100px] lg:text-[110px] font-black leading-[0.85] tracking-tighter mb-6 text-white uppercase" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              ETH<br />
-              <span className="text-[#FF72AA]">LAGOS</span>
+              ETHEREUM<br />
+              <span className="text-[#FF72AA]">FOR ALL</span>
             </h1>
 
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#FF72AA]/40 bg-[#FF72AA]/10 px-5 py-2.5 mb-6 text-[#FFD4E7] shadow-[0_0_30px_rgba(255,114,170,0.2)]">
               <CalendarDays className="w-4 h-4 text-[#FF72AA]" />
-              <span className="text-xs md:text-sm font-black uppercase tracking-[0.18em]">July 16 to July 18</span>
+              <span className="text-xs md:text-sm font-black uppercase tracking-[0.18em]">July 16-18, 2026</span>
+            </div>
+            
+            <div className="text-xl md:text-2xl font-black text-[#FF72AA] mb-4 uppercase tracking-widest">
+                ETHLagos 2026
             </div>
 
             <p className="text-xl md:text-2xl text-white/70 max-w-sm font-medium leading-[1.2] mb-8">
-              Africa's Premier Ethereum Conference & Developer Summit
+              Bridging the gap between the promise of blockchain and the reality of Africa's digital economy.
             </p>
 
             <div className="flex items-start gap-2 text-white/40 mb-10">
               <MapPin className="w-5 h-5 text-[#FF72AA] mt-1 shrink-0" />
-              <span className="text-lg font-bold uppercase tracking-tight">NATIONAL THEATRE, LAGOS</span>
+              <span className="text-lg font-bold uppercase tracking-tight">LAGOS, NIGERIA</span>
             </div>
 
             {/* Stats */}
@@ -59,17 +63,25 @@ export function Hero() {
               <StatItem label="Prize Pool" value="$50K" isAccent />
             </div>
 
-            <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href={LUMA_REGISTRATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit px-10 py-5 bg-[#FF72AA] text-[#001929] rounded-2xl font-black text-xl flex items-center gap-3 transition-all hover:bg-[#ff5a99] shadow-2xl shadow-[#FF72AA]/20"
-            >
-              Register Now
-              <ArrowRight className="w-6 h-6 -rotate-45" />
-            </motion.a>
+            <div className="flex flex-col sm:flex-row gap-4 w-fit">
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                href="mailto:info@ethlagos.ng"
+                className="px-8 py-4 bg-[#FF72AA] text-[#001929] rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition-all hover:bg-[#ff5a99] shadow-2xl shadow-[#FF72AA]/20 whitespace-nowrap"
+              >
+                Become a Partner
+                <ArrowRight className="w-5 h-5 -rotate-45" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                href="mailto:info@ethlagos.ng"
+                className="px-8 py-4 bg-transparent border-2 border-[#FF72AA] text-[#FF72AA] rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition-all hover:bg-[#FF72AA]/10 whitespace-nowrap"
+              >
+                Apply to Speak
+              </motion.a>
+            </div>
           </motion.div>
 
           {/* Middle: Pronounced Community Logo */}

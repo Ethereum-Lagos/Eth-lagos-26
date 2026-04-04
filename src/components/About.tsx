@@ -24,11 +24,19 @@ export function About() {
             VENUE
           </motion.div>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 uppercase tracking-tighter" style={{ fontFamily: 'Outfit, sans-serif' }}>
-            WELCOME TO <span className="text-[#FF72AA]">LAGOS</span>
+            FROM ADOPTION <br className="hidden md:block"/> TO <span className="text-[#FF72AA]">INFRASTRUCTURE</span>
           </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed font-medium">
-            Africa's tech hub and the beating heart of innovation on the continent. Join the community at the iconic National Theatre.
-          </p>
+          <div className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-medium space-y-6 text-left md:text-center block">
+            <p>
+              Nigeria is the undisputed crypto capital of Africa. But for years, adoption has been driven by necessity—P2P trading and hedging against inflation.
+            </p>
+            <p>
+              By 2026, the narrative shifts. ETHLagos is convening the continent's largest developer talent pool to move from just <em className="text-white">using</em> crypto to <em className="text-white">building</em> sovereign financial infrastructure.
+            </p>
+            <p>
+              We are grounding the "Ethereum for ALL" vision in technical reality, focusing on the mature innovations—Layer 2 scaling, Account Abstraction UX, and on-chain AI Agents—ready for deployment in the Nigerian market.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">

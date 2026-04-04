@@ -5,14 +5,19 @@ export function Footer() {
 
   return (
     <footer className="bg-[#001929] py-12 px-6 border-t border-white/5">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
         <div className="text-white/40 text-sm font-bold uppercase tracking-widest">
-          © {currentYear} ETHEREUM NIGERIA. ALL RIGHTS RESERVED.
+          © 2026 ETHLAGOS. ALL RIGHTS RESERVED.
         </div>
 
-        <div className="flex items-center gap-6">
-          <SocialLink href="https://www.linkedin.com/company/ethereum-lagos" icon={Linkedin} />
-          <SocialLink href="https://x.com/EthereumLagos" icon={Twitter} />
+        <div className="flex items-center justify-center flex-col md:flex-row gap-4 md:gap-6">
+          <div className="text-white/40 text-sm font-medium">
+            Stay Updated on Tickets & Speakers
+          </div>
+          <div className="flex gap-6">
+            <SocialLink href="https://www.linkedin.com/company/ethereum-lagos" icon={Linkedin} />
+            <SocialLink href="https://x.com/EthereumLagos" icon={Twitter} />
+          </div>
         </div>
       </div>
     </footer>

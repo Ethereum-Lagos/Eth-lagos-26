@@ -5,10 +5,10 @@ const LUMA_REGISTRATION_URL = 'https://luma.com/sa6qy16d';
 
 export function HackathonSection() {
   const tracks = [
-    { title: 'DeFi Innovation', icon: Landmark, desc: 'Build the next generation of decentralized finance protocols.', prize: '$15,000', color: '#59A9DC' },
-    { title: 'Social Impact', icon: ShieldCheck, desc: 'Solutions addressing real-world problems in African communities.', prize: '$12,000', color: '#FF72AA' },
-    { title: 'NFT & Creator Tools', icon: Palette, desc: 'Tools and platforms empowering digital creators.', prize: '$10,000', color: '#F5DB5E' },
-    { title: 'Layer 2 Solutions', icon: Cpu, desc: 'Innovative scaling solutions and rollup implementations.', prize: '$8,000', color: '#FF72AA' },
+    { title: 'Agents for the Real World', icon: Landmark, desc: 'Building autonomous AI agents that perform useful economic labor on L2s (leveraging ERC-8004).', prize: 'Challenge 1', color: '#59A9DC' },
+    { title: 'The "Invisible Crypto"', icon: ShieldCheck, desc: 'Creating UX so clean grandma can use it (leveraging AA & Paymasters).', prize: 'Challenge 2', color: '#FF72AA' },
+    { title: 'Sovereign Finance & Local RWAs', icon: Palette, desc: 'Bridging on-chain liquidity with off-chain Nigerian assets.', prize: 'Challenge 3', color: '#F5DB5E' },
+    { title: 'Decentralized Society', icon: Cpu, desc: 'Building censorship-resistant social tools and privacy tech tailored for Lagos.', prize: 'Challenge 4', color: '#FF72AA' },
   ];
 
   return (
@@ -20,7 +20,7 @@ export function HackathonSection() {
             whileInView={{ opacity: 1, y: 0 }}
             className="inline-block px-4 py-1.5 bg-[#FF72AA]/10 border border-[#FF72AA]/20 rounded-full text-[#FF72AA] text-sm font-black mb-4 uppercase tracking-widest"
           >
-            HACKATHON
+            HACKATHON (RUNNING SIMULTANEOUSLY: JULY 16-18)
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -28,10 +28,10 @@ export function HackathonSection() {
             className="text-5xl md:text-7xl font-black text-[#001929] mb-4 uppercase tracking-tighter"
             style={{ fontFamily: 'Outfit, sans-serif' }}
           >
-            BUILD THE <span className="text-[#FF72AA]">FUTURE</span>
+            SYNTHESIS & <span className="text-[#FF72AA]">FRONTIERS</span>
           </motion.h2>
-          <p className="text-[#001929]/40 text-lg max-w-2xl mx-auto font-medium mb-12">
-            48 hours of non-stop building. Four tracks. $50,000 in prizes.
+          <p className="text-[#001929]/60 text-lg max-w-3xl mx-auto font-medium mb-12">
+            While the main stage discusses the "why," the hackathon focuses on the "how." We are challenging builders to synthesize frontier technology with real Nigerian utility across four targeted challenges.
           </p>
 
           <div className="inline-flex items-center gap-4 px-10 py-5 bg-[#FF72AA] bg-opacity-5 border-2 border-[#FF72AA] rounded-[32px] text-[#FF72AA] mb-20 shadow-xl shadow-[#FF72AA]/5">
@@ -108,12 +108,10 @@ export function HackathonSection() {
               ))}
             </div>
             <a
-              href={LUMA_REGISTRATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center w-full py-5 bg-[#FF72AA] text-white rounded-2xl font-black text-xl hover:bg-[#ff5a99] transition-all shadow-xl shadow-[#FF72AA]/20"
+              href="mailto:info@ethlagos.ng"
+              className="block text-center w-full py-5 bg-[#FF72AA] text-white rounded-2xl font-black text-xl hover:bg-[#ff5a99] transition-all shadow-xl shadow-[#FF72AA]/20 uppercase"
             >
-              REGISTER FOR HACKATHON
+              BUILDER INTEREST FORM
             </a>
           </div>
         </div>

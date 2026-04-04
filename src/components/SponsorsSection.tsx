@@ -33,10 +33,10 @@ export function SponsorsSection() {
                         PARTNERS
                     </motion.div>
                     <h2 className="text-5xl md:text-7xl font-black text-[#001929] mb-6 tracking-tighter" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                        BACKED BY THE <span className="text-[#FF72AA]">BEST</span>
+                        BUILD THE <span className="text-[#FF72AA]">FUTURE</span> WITH US.
                     </h2>
-                    <p className="text-[#001929]/60 text-lg max-w-2xl mx-auto font-medium">
-                        Supported by leading protocols and organizations in the Ethereum ecosystem.
+                    <p className="text-[#001929]/60 text-lg max-w-3xl mx-auto font-medium">
+                        Engage with the largest concentration of Web3 developers, AI engineers, and founders in Africa. Position your infrastructure as a foundational pillar of Nigeria’s next phase of growth.
                     </p>
                 </div>
 
@@ -78,9 +78,9 @@ export function SponsorsSection() {
                     <p className="text-[#001929]/40 font-bold mb-6">Interested in partnering with ETH Lagos?</p>
                     <a
                         href="mailto:info@ethlagos.ng"
-                        className="inline-flex px-10 py-4 bg-[#001929]/5 border border-[#001929]/10 text-[#001929] rounded-2xl font-black text-lg hover:bg-[#001929] hover:text-white transition-all"
+                        className="inline-flex px-10 py-4 bg-[#001929]/5 border border-[#001929]/10 text-[#001929] rounded-2xl font-black text-lg hover:bg-[#001929] hover:text-white transition-all uppercase"
                     >
-                        BECOME A PARTNER
+                        DOWNLOAD SPONSORSHIP DECK
                     </a>
                 </div>
             </div>
